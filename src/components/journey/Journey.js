@@ -16,33 +16,30 @@ const Journey = (props) => {
                             <div className={classes.row_md_12}>
                                 <div className={classes.timeline_centered}>
                                     <ScrollAnimation offset={0} animateIn="fadeInLeft" duration={2.4} animateOnce={true} initiallyVisible={true}>
-                                        <article className={classes.timeline_entry}>
-                                            <div className={`${classes.timeline_icon} ${classes.timeline_icon_5}`} >
-                                                <FontAwesomeIcon icon={faBriefcase}/>
-                                            </div>
-                                            <div className={classes.label}>
-                                                <h2>{props.journey.jobNow.title} <span>{props.journey.jobNow.when}</span></h2>
-                                                <h4>{props.journey.jobNow.where}</h4>
-                                                    {props.journey.jobNow.what.map((activities, index) => {
-                                                        return (<p key={index}>{activities}</p>);
-                                                    })}
-                                            </div>
-                                        </article>
+                                        {props.journey.jobs.map((job, index) => {
+                                            return (
+                                                <article className={classes.timeline_entry}>
+                                                    <div className={`${classes.timeline_icon} ${classes.timeline_icon_5}`} style={{ backgroundColor: "white" }}>
+                                                        <FontAwesomeIcon icon={job.icon} color={job.icon.color} />
+                                                    </div>
+                                                    <div className={classes.label}>
+                                                        <h2>{job.title} <span>{job.when}</span></h2>
+                                                        <h4>{job.where}</h4>
+                                                            {job.what.map((activities, index) => {
+                                                                return (<p key={index}>{activities}</p>);
+                                                            })}
+                                                    </div>
+                                                </article>
+                                            );
+                                        })}
+                                        <div className={classes.timeline_entry_inner}><div className={classes.timeline_icon_3 || classes.color_none}></div></div>
                                     </ScrollAnimation>
-                                    <ScrollAnimation offset={0} animateIn="fadeInLeft" duration={2.4} animateOnce={true} initiallyVisible={true}>
-                                        <article className={classes.timeline_entry}>
-                                            <div className={`${classes.timeline_icon} ${classes.timeline_icon_5}`} >
-                                                <FontAwesomeIcon icon={faBriefcase}/>
-                                            </div>
-                                            <div className={classes.label}>
-                                                <h2>{props.journey.jobOldLast.title} <span>{props.journey.jobOldLast.when}</span></h2>
-                                                <h4>{props.journey.jobOldLast.where}</h4>
-                                                    {props.journey.jobOldLast.what.map((activities, index) => {
-                                                        return (<p key={index}>{activities}</p>);
-                                                    })}
-                                            </div>
-                                        </article>
-                                    </ScrollAnimation>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={classes.row}>
+                            <div className={classes.row_md_12}>
+                                <div className={classes.timeline_centered}>
                                     <ScrollAnimation offset={0} animateIn="fadeInLeft" duration={2.4} animateOnce={true} initiallyVisible={true}>
                                         <article>
                                             <div className={`${classes.timeline_icon} ${classes.timeline_icon_4}`} >
@@ -55,8 +52,8 @@ const Journey = (props) => {
                                                         return (<p key={index}>{activities}</p>);
                                                     })}
                                             </div>
-                                            <div className={classes.timeline_entry_inner}><div className={classes.timeline_icon_3 || classes.color_none}></div></div>
                                         </article>
+                                        <div className={classes.timeline_entry_inner}><div className={classes.timeline_icon_3 || classes.color_none}></div></div>
                                     </ScrollAnimation>
                                 </div>
                             </div>
