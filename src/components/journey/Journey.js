@@ -32,6 +32,15 @@ const Journey = (props) => {
                                                 </article>
                                             );
                                         })}
+                                        <div className={classes.timeline_entry_inner}><div className={classes.timeline_icon_3 || classes.color_none}></div></div>
+                                    </ScrollAnimation>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={classes.row}>
+                            <div className={classes.row_md_12}>
+                                <div className={classes.timeline_centered}>
+                                    <ScrollAnimation offset={0} animateIn="fadeInLeft" duration={2.4} animateOnce={true} initiallyVisible={true}>
                                         <article>
                                             <div className={`${classes.timeline_icon} ${classes.timeline_icon_4}`} >
                                                 <FontAwesomeIcon icon={faSchool}/>
