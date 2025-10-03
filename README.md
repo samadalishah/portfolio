@@ -13,7 +13,7 @@ Use any of your favorite IDE and terminal
 
 For installing and run, execute command:
 ```
-npm intall && npm start
+npm install && npm start
 ```
 
 ## Customize for your portfolio

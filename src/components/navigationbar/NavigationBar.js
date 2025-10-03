@@ -32,10 +32,7 @@ const NavigationBar = (props) => {
                 <div className={styles.socialCard}>
                     <div className={styles.socialCardIcons}> <a href={props.profile.socialLinks.github} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faGithub}/></a></div>
                     <div className={styles.socialCardIcons}> <a href={props.profile.socialLinks.linkedIn} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faLinkedin}/></a></div>
-                    <div className={styles.socialCardIcons}> <a href={props.profile.socialLinks.twitter} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faTwitter}/></a></div>
-                    <div className={styles.socialCardIcons}> <a href={props.profile.socialLinks.instagram} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faInstagram}/></a></div>
                     <div className={styles.socialCardIcons}> <a href={"mailto:" + props.profile.socialLinks.email} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faEnvelope}/></a></div>
-                    <div className={styles.socialCardIcons}> <a href={props.profile.socialLinks.facebook} rel="opener noreferrer" target="_blank" className={styles.faLg}><FontAwesomeIcon icon={faFacebook}/></a></div>
                 </div>
             </div>
         </div>
