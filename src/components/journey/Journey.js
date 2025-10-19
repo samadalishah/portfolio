@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Journey.module.css';
 import ScrollAnimation from 'react-animate-on-scroll';
 import "animate.css/animate.min.css";
-import {faSchool, faBriefcase} from '@fortawesome/free-solid-svg-icons'
+import {faSchool, faBriefcase, faUniversity} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Journey = (props) => {
@@ -41,18 +41,22 @@ const Journey = (props) => {
                             <div className={classes.row_md_12}>
                                 <div className={classes.timeline_centered}>
                                     <ScrollAnimation offset={0} animateIn="fadeInLeft" duration={2.4} animateOnce={true} initiallyVisible={true}>
-                                        <article>
-                                            <div className={`${classes.timeline_icon} ${classes.timeline_icon_4}`} >
-                                                <FontAwesomeIcon icon={faSchool}/>
-                                            </div>
-                                            <div className={classes.label}>
-                                                <h2 >{props.journey.education.title} <span>{props.journey.education.when}</span></h2>
-                                                <h4>{props.journey.education.where}</h4>
-                                                    {props.journey.education.what.map((activities, index) => {
-                                                        return (<p key={index}>{activities}</p>);
-                                                    })}
-                                            </div>
-                                        </article>
+                                        {props.journey.educations.map((education, index) => {
+                                            return (
+                                                <article className={classes.timeline_entry}>
+                                                    <div className={`${classes.timeline_icon} ${classes.timeline_icon_5}`} style={{ backgroundColor: "white" }}>
+                                                        <FontAwesomeIcon icon={education.icon} color={education.icon.color} />
+                                                    </div>
+                                                    <div className={classes.label}>
+                                                        <h2>{education.title} <span>{education.when}</span></h2>
+                                                        <h4>{education.where}</h4>
+                                                            {education.what.map((activities, index) => {
+                                                                return (<p key={index}>{activities}</p>);
+                                                            })}
+                                                    </div>
+                                                </article>
+                                            );
+                                        })}
                                         <div className={classes.timeline_entry_inner}><div className={classes.timeline_icon_3 || classes.color_none}></div></div>
                                     </ScrollAnimation>
                                 </div>
