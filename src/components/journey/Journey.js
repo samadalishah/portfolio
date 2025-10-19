@@ -1,8 +1,6 @@
-import React from 'react';
 import classes from './Journey.module.css';
 import ScrollAnimation from 'react-animate-on-scroll';
 import "animate.css/animate.min.css";
-import {faSchool, faBriefcase, faUniversity} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 const Journey = (props) => {
