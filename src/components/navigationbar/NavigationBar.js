@@ -1,10 +1,9 @@
-import React from "react";
 import styles from './NavigationBar.module.css';
-import profileImage from '../../data/images/sam.jpeg'
+import profileImage from '../../data/images/sam.png'
 import { HashLink as Link } from 'react-router-hash-link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faGithub, faLinkedin, faTwitter, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons'
 
 const NavigationBar = (props) => {
     return (
@@ -18,7 +17,6 @@ const NavigationBar = (props) => {
 
             <div className={styles.r2}>
                 <img src={profileImage} alt={"Samad Ali Shah"} />
-                {/*<GetImage />*/}
                 <p className={styles.gmail}><FontAwesomeIcon icon={faEnvelope}/> {props.profile.socialLinks.email}</p>
             </div>
 
